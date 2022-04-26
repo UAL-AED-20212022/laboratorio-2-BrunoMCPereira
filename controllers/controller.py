@@ -43,7 +43,7 @@ def eue (lista: list) -> list:
     return lista
 
 def ep(lista, pais):
-    if l.search_item(lista, pais) == False:
+    if l.search_item(pais) == False:
         return False
-    elif l.search_item(lista, pais) == True:
+    elif l.search_item(pais) == True:
         return True

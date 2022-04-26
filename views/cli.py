@@ -30,7 +30,7 @@ def interacao():
             ctr.rpii(listapaises, int(indice), paisnovo)
             ctr.impressao()
         elif instr == "VNE":
-            print(f'O número de elementos são {ctr.vne()}')
+            print(f'O número de elementos são {ctr.vne()}.')
         elif instr == "VP":
             pais = instrs[1]
             if ctr.vp(pais) == True:
