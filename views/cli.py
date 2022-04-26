@@ -16,7 +16,7 @@ def interacao():
             ctr.impressao()
         elif instr == "RPDE":
             paisnovo = instrs[1]
-            paisregistado = instr[2]
+            paisregistado = instrs[2]
             ctr.rpde(listapaises, paisnovo, paisregistado)
             ctr.impressao()
         elif instr == "RPAE":
@@ -34,19 +34,19 @@ def interacao():
         elif instr == "VP":
             pais = instrs[1]
             if ctr.vp(pais) == True:
-                print(f'O país {pais} encontra-se na lista')
+                print(f'O país {pais} encontra-se na lista.')
             if ctr.vp(pais) == False:
-                print(f'O país {pais} não se encontra na lista')
+                print(f'O país {pais} não se encontra na lista.')
         elif instr == "EPE":
             print(listapaises)
             ctr.epe(listapaises)
-            print(f'O país {pais} foi eliminado da lista')
+            print(f'O país {pais} foi eliminado da lista.')
         elif instr == "EUE":
             ctr.eue(listapaises)
             print(f'O país {pais} foi eliminado da lista')
         elif instr == "EP":
             pais = instrs[1]
             if ctr.ep(listapaises, pais) == False:
-                print(f'O país {pais} não se encontra na lista')
+                print(f'O país {pais} não se encontra na lista.')
             elif ctr.ep(listapaises, pais) == True:
-                print(f'O país {pais} foi eliminado da lista')
+                print(f'O país {pais} foi eliminado da lista.')
