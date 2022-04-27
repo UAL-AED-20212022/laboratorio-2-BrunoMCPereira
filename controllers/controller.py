@@ -31,18 +31,19 @@ def vne ():
 def vp (pais):
     if l.search_item (pais) == True:
         return True
-    elif l.search_item (pais) == False: 
+    else:
         return False
 
-def epe (lista: list) -> list:
+def epe () -> str:
+    pais = l.start_node.get_item()
     l.delete_at_start() 
-    return lista
+    return pais
 
-def eue (lista: list) -> list:
+def eue (lista) -> list:
     l.delete_at_end()
     return lista
 
-def ep(lista, pais):
+def ep(pais):
     if l.search_item(pais) == False:
         return False
     elif l.search_item(pais) == True:

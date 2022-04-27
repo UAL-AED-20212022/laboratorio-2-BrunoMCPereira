@@ -1,7 +1,11 @@
 from controllers import controller as ctr
+from models.LinkedList import LinkedList
+from models.Node import Node
+
 
 def interacao():
     listapaises: list = []
+    l = LinkedList()
     while True:
         entrada: str = input()
         instrs: list = entrada.split(" ")
@@ -35,18 +39,17 @@ def interacao():
             pais = instrs[1]
             if ctr.vp(pais) == True:
                 print(f'O país {pais} encontra-se na lista.')
-            if ctr.vp(pais) == False:
+            else:
                 print(f'O país {pais} não se encontra na lista.')
         elif instr == "EPE":
-            print(listapaises)
-            ctr.epe(listapaises)
-            print(f'O país {pais} foi eliminado da lista.')
+            print(f'O país {ctr.epe()} foi eliminado da lista.')
         elif instr == "EUE":
+            pais = l.get_last_node()
             ctr.eue(listapaises)
             print(f'O país {pais} foi eliminado da lista')
         elif instr == "EP":
             pais = instrs[1]
-            if ctr.ep(listapaises, pais) == False:
+            if ctr.ep(pais) == False:
                 print(f'O país {pais} não se encontra na lista.')
-            elif ctr.ep(listapaises, pais) == True:
+            else:
                 print(f'O país {pais} foi eliminado da lista.')
