@@ -35,7 +35,9 @@ def vp (pais):
         return False
 
 def epe () -> str:
-    pais = l.start_node.get_item()
+    l.reverse_linkedlist()
+    pais = l.get_last_node()
+    l.reverse_linkedlist()
     l.delete_at_start() 
     return pais
 
@@ -46,5 +48,5 @@ def eue (lista) -> list:
 def ep(pais):
     if l.search_item(pais) == False:
         return False
-    elif l.search_item(pais) == True:
+    else:
         return True
