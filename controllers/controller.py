@@ -47,7 +47,7 @@ def eue () -> list:
     return pais
 
 def pep(pais):
-    if l.search_item(pais) == False:
+    if l.search_itemsp(pais) == False:
         return False
     else:
         return True

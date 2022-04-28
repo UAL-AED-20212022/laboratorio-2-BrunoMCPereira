@@ -110,7 +110,7 @@ class LinkedList:
                 print("Item found")
                 return True
             n = n.ref
-        print("item bot found")
+        print("item not found")
         return False
 
 
@@ -173,3 +173,13 @@ class LinkedList:
         for i in range(0, length - n):
             temp = temp.ref
         return temp.item
+
+    def search_itemsp(self, x):
+        if self.start_node is None:
+            return
+        n = self.start_node
+        while n is not None:
+            if n.item == x:
+                return True
+            n = n.ref
+        return False
