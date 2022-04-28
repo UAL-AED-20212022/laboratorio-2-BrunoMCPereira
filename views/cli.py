@@ -47,7 +47,7 @@ def interacao():
             print(f'O país {ctr.eue()} foi eliminado da lista.')
         elif instr == "EP":
             pais = instrs[1]
-            if ctr.ep(pais) == False:
+            if ctr.pep(pais) == False:
                 print(f'O país {pais} não se encontra na lista.')
             else:
-                print(f'O país {pais} foi eliminado da lista.')
+                print(f'O país {ctr.ep(pais)} foi eliminado da lista.')

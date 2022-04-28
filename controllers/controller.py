@@ -46,8 +46,12 @@ def eue () -> list:
     l.delete_at_end()
     return pais
 
-def ep(pais):
+def pep(pais):
     if l.search_item(pais) == False:
         return False
     else:
         return True
+
+def ep(pais):
+    l.delete_element_by_value(pais)
+    return pais
