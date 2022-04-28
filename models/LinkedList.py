@@ -110,7 +110,17 @@ class LinkedList:
                 print("Item found")
                 return True
             n = n.ref
-        print("item bot found")
+        print("item not found")
+        return False
+
+    def search_itemsp(self, x): # pesquisa de pais sem print - auxilio comando EP
+        if self.start_node is None:
+            return
+        n = self.start_node
+        while n is not None:
+            if n.item == x:
+                return True
+            n = n.ref
         return False
 
 
@@ -145,8 +155,7 @@ class LinkedList:
             print("item not found in the list")
 
         else:
-            n.ref = n.ref.ref
-            
+            n.ref = n.ref.ref # Necessário para correr testes - ? Análise            
     def reverse_linkedlist(self):
         prev = None
         n = self.start_node
