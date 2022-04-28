@@ -1,49 +1,54 @@
 from models.Node import Node
+# importa do Node a classe que define a estrutura de dados
 
-class LinkedList:
+# item de dados - self.item = data - passado através do construtor
+# item de referência - self.ref - referência inicia no null
+
+class LinkedList: # Classe que vai conter os metodos que operam sobre a lista
     def __init__(self):
-        self.start_node = None
+        self.start_node = None # Definimos o start_node (membro que aponta para o primeiro nó)
+        # Neste caso o nó inicial é definido com "None" uma vez que a lista está vazia
     
-    def traverse_list(self):
+    def traverse_list(self): # Metodo que se destina a correr a lista e assim ler os dados contidos nela:
         if self.start_node is None:
-            print("List has no element")
+            print("List has no element") # Se o membro que aponta para o primeiro nó se mantiver vazia, devolve essa mensagem
             return
         else:
-            n =  self.start_node
-            while n is not None:
-                print(n.item, " ")
+            n =  self.start_node # Definimos n como nó:
+            while n is not None: # Corremos todos os nós da lista
+                print(n.item, " ") 
                 n = n.ref
 
     def insert_at_end(self, data):
-        new_node = Node(data)
+        new_node = Node(data) # novo nó é = self.item - item = Instrução passada pelo construtor
 
-        if self.start_node is None:
-            self.start_node = new_node
+        if self.start_node is None: #Se a lista estiver vazia
+            self.start_node = new_node # define o novo nó como o nó de inicio - o primeiro nó
             return
-        n = self.start_node
-        while n.ref is not None:
-            n = n.ref
-        n.ref = new_node
+        n = self.start_node # Definimos n como nó:
+        while n.ref is not None: # Corremos todos os nós da lista - assim que o nó seguinte não existir:
+            n = n.ref # o novo nó será a referência devolvida none
+        n.ref = new_node # e "preenche" essa referência com os novos dados
     
     def insert_at_start(self, data):
-        new_node = Node(data)
-        new_node.ref = self.start_node
-        self.start_node = new_node
+        new_node = Node(data) # novo nó é = self.item - item = Instrução passada pelo construtor
+        new_node.ref = self.start_node # a referência do novo nó é determinada como o nó de inicio
+        self.start_node = new_node # "insere" os dados no nó definido - nó de inicio
 
     
     def insert_after_item(self, x, data):
-        n = self.start_node
+        n = self.start_node # Definimos n como nó:
         print(n.ref)
-        while n is not None:
-            if n.item == x:
-                break
-            n = n.ref
-        if n is None:
+        while n is not None: # corremos todos os nós até o nó não conter informação
+            if n.item == x: # se a informação dos dados do nó iterado for igual à item (valor inserido pelo construtor) 
+                break # Quebramos o ciclo de iterações
+            n = n.ref # e determinamos a referência do nó 
+        if n is None: # se após as iterações n for none (ou seja n.ref arquivou none)
             print("item not in the list")
-        else:
-            new_node = Node(data)
-            new_node.ref = n.ref
-            n.ref = new_node
+        else: # Caso n contenha a informação inserida pelo construtor
+            new_node = Node(data) # novo nó é = self.item - item = Instrução passada pelo construtor
+            new_node.ref = n.ref # a referência do nó criado é a mesma que o nó que continha a informação
+            n.ref = new_node 
 
     def insert_before_item(self, x, data):
         if self.start_node is None:
