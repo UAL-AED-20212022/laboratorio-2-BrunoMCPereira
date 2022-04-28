@@ -7,3 +7,7 @@ def main() -> None:
 
 if __name__ == '__main__':
     main() 
+
+
+
+# Programa destinado a registar e gerir uma Lista de Paises indicados por utilizador

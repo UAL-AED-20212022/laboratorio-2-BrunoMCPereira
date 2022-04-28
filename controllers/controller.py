@@ -41,9 +41,10 @@ def epe () -> str:
     l.delete_at_start() 
     return pais
 
-def eue (lista) -> list:
+def eue () -> list:
+    pais = l.get_last_node()
     l.delete_at_end()
-    return lista
+    return pais
 
 def ep(pais):
     if l.search_item(pais) == False:

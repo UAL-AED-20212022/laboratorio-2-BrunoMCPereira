@@ -44,9 +44,7 @@ def interacao():
         elif instr == "EPE":
             print(f'O país {ctr.epe()} foi eliminado da lista.')
         elif instr == "EUE":
-            pais = l.get_last_node()
-            ctr.eue(listapaises)
-            print(f'O país {pais} foi eliminado da lista')
+            print(f'O país {ctr.eue()} foi eliminado da lista.')
         elif instr == "EP":
             pais = instrs[1]
             if ctr.ep(pais) == False:
