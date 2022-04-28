@@ -110,7 +110,7 @@ class LinkedList:
                 print("Item found")
                 return True
             n = n.ref
-        print("item not found")
+        print("item bot found")
         return False
 
     def search_itemsp(self, x): # pesquisa de pais sem print - auxilio comando EP
